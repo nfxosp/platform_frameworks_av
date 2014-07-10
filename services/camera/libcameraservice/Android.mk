@@ -55,12 +55,11 @@ LOCAL_C_INCLUDES += \
     system/media/camera/include \
     external/jpeg
 
-
-LOCAL_CFLAGS += -Wall -Wextra
-
 ifeq ($(BOARD_USE_MHB_ION), true)
 LOCAL_CFLAGS += -DUSE_MHB_ION
 endif
+
+LOCAL_CFLAGS += -Wall -Wextra
 
 ifeq ($(BOARD_FIX_WRONG_RECBUF_FOR_CAMERA), true)
 LOCAL_CFLAGS += -DFIX_WRONG_RECBUF_FOR_CAMERA
