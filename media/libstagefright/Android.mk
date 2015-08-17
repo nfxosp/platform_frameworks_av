@@ -160,6 +160,14 @@ ifeq ($(TARGET_BOARD_PLATFORM),omap4)
 LOCAL_CFLAGS += -DBOARD_CANT_REALLOCATE_OMX_BUFFERS
 endif
 
+ifeq ($(BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21), true)
+# This needs flag requires the following string constant in
+# CameraParametersExtra.h:
+#
+# const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "nv21";
+LOCAL_CFLAGS += -DUSE_SAMSUNG_CAMERAFORMAT_NV21
+endif
+
 LOCAL_CLANG := true
 
 LOCAL_MODULE:= libstagefright
